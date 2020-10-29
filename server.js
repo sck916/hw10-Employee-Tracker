@@ -22,7 +22,7 @@ function init() {
         .prompt({
             name: "command",
             type: "rawlist",
-            message: "Hello... What would you like to do?",
+            message: "Hello what would you like to do?",
             choices: [
                 "View all departments",
                 "View all roles",

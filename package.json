@@ -1,0 +1,21 @@
+{
+  "name": "hw10-Employee-Tracker",
+  "version": "1.0.0",
+  "description": "Employee Tracker is a homework assignment for the Northwestern University Coding Program",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sck916/hw10-Employee-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sck916/hw10-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/sck916/hw10-Employee-Tracker#readme"
+}
