@@ -16,20 +16,10 @@ let connection = mysql.createConnection({
     init();
   });
 
-//   function viewAll(){
-//      let query = `SELECT employee.id,  first_name, last_name, salary, departmentName, manager_id
-//       FROM employee
-//       JOIN roles 
-//       ON role_id = roles_id
-//       JOIN department ON department_id = department_id`
-//       connection.query(query),(err,result) => {
-//           if(err) throw err;
-//           console.log("\n\n");
-//           console.table(result);
-//       }
-//   }
 
 
+
+//VIEW ALL DEPARTMENTS 
 function viewDepartments (){
     connection.query("SELECT * FROM department;",function(err, data){
         console.log("error Results",err);
@@ -37,6 +27,7 @@ function viewDepartments (){
     })
     
 }
+//VIEW ROLES
 function viewRoles(){
     connection.query("SELECT * FROM roles;",function(err, data){
         console.log("error Results",err);
@@ -44,7 +35,7 @@ function viewRoles(){
     })
     
 }
-
+//VIEW EMPLOYEES
 function viewEmployee(){
     connection.query("SELECT * FROM employee;",function(err, data){
         console.log("error Results",err);
@@ -52,6 +43,7 @@ function viewEmployee(){
     })
     
 }
+//ADD DEPARTMENTS
 function addDepartment(){
     console.log("TIME TO ADD DEPART");
     inquirer
@@ -68,7 +60,7 @@ function addDepartment(){
 
         })
 }
-
+//ADD ROLES 
 function addRole(){
     console.log("TIME TO ADD DEPART");
     connection.query("SELECT * FROM department;",function(err, data){
@@ -144,8 +136,8 @@ function init() {
     inquirer
         .prompt({
             name: "command",
-            type: "rawlist",
-            message: "Hello what would you like to do?",
+            type: "list",
+            message: "WHAT CAN CLI DO FOR YOU",
             choices: [
                 "View all departments",
                 "View all roles",
