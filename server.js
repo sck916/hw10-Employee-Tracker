@@ -16,6 +16,19 @@ let connection = mysql.createConnection({
     init();
   });
 
+//   function viewAll(){
+//      let query = `SELECT employee.id,  first_name, last_name, salary, departmentName, manager_id
+//       FROM employee
+//       JOIN roles 
+//       ON role_id = roles_id
+//       JOIN department ON department_id = department_id`
+//       connection.query(query),(err,result) => {
+//           if(err) throw err;
+//           console.log("\n\n");
+//           console.table(result);
+//       }
+//   }
+
 
 function viewDepartments (){
     connection.query("SELECT * FROM department;",function(err, data){
@@ -64,12 +77,12 @@ function addRole(){
         var deptStr = []
         for (let i = 0; i < data.length; i++) {
             
-            console.log('r we looping ?', data[i].departmentName)
+            console.log('are we looping ?', data[i].departmentName)
             deptStr.push(data[i].departmentName)
             
         }
 
-        console.log('jsut strings array!!!', deptStr)
+        console.log('just strings array!!!', deptStr)
         
         inquirer
             .prompt([
@@ -113,13 +126,17 @@ function addRole(){
     
             })
 
-
-
-
     })
     
-    // 
-}
+};
+
+function addEmployee(first_name, last_name, role_id, manager_id){
+    let query =`INSERT INTO employee (first_name, last_name, role_id, manager) VALUES(?,?,?)`
+    connection.query(query, [first_name, last_name, role_id,manager_id],(err,result) =>{
+        if (err) throw err;
+        console.log('WE ADDED AN EMPLOYEE',err,data);
+    })
+};
 
 
 function init() {
@@ -160,5 +177,6 @@ function init() {
             else if (response.command === "Exit") {
                 connection.end();
             }
+            
         })
 };
