@@ -12,12 +12,12 @@ let connection = mysql.createConnection({
 
   connection.connect(function(err) {
     if (err) throw err;
-    console.log("connected");
+    console.log("CONNECTED!!");
     init();
   });
 
 function init() {
-    //Inquirer
+    //THIS IS  FOR INQUIRER
     inquirer
         .prompt({
             name: "command",
@@ -31,7 +31,7 @@ function init() {
             ]
         })
         .then(function(response) {
-            //If Else statements for matching the response from the user to the query functions that link to the database.
+            //If Else statements matching the user response to the query functions that link to the database.
             if (response.command === "View all departments") {
                 viewDepartments();
             }

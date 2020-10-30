@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/sck916/hw10-Employee-Tracker/issues"
   },
-  "homepage": "https://github.com/sck916/hw10-Employee-Tracker#readme"
+  "homepage": "https://github.com/sck916/hw10-Employee-Tracker#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "my": "^0.3.3",
+    "mysql": "^2.18.1",
+    "sql": "^0.78.0"
+  }
 }

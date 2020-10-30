@@ -9,7 +9,7 @@ INSERT INTO department (name) VALUES ("Legal");
 -- ROLE
 INSERT INTO role (title, salary, department_id) VALUES ('Manager', 100, 1);
 INSERT INTO role (title, salary, department_id) VALUES ('Advocate', 75, 2);
-INSERT INTO role (title, salary, department_id) VALUES ('Supervisor', 50, 3);
+INSERT INTO role (title, salary, department_id) VALUES ('Supervisor', 70, 3);
 INSERT INTO role (title, salary, department_id) VALUES ('Lawyer', 90, 4);
 
 -- EMPLOYEE
