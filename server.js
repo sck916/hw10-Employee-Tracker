@@ -34,7 +34,8 @@ function viewRoles(){
 
 function viewEmployee(){
     connection.query("SELECT * FROM employee;",function(err, data){
-        console.log("error Results",err,data);
+        console.log("error Results",err);
+        console.table(data)
     })
     
 }
